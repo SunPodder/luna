@@ -16,11 +16,11 @@ void MainWindow::show() {
     Core::Logger::log("Showing Main Window (QML)");
     
     const QStringList potentialPaths = {
-        "src/ui/Main.qml",
-        "../src/ui/Main.qml",
-        "../../src/ui/Main.qml", 
-        QCoreApplication::applicationDirPath() + "/../../src/ui/Main.qml", // Common build layout
-        "/home/sun/Workspace/luna/src/ui/Main.qml" // Absolute fallback for this workspace
+        "src/ui/qml/Main.qml",
+        "../src/ui/qml/Main.qml",
+        "../../src/ui/qml/Main.qml", 
+        QCoreApplication::applicationDirPath() + "/../../src/ui/qml/Main.qml", // Common build layout
+        "/home/sun/Workspace/luna/src/ui/qml/Main.qml" // Absolute fallback for this workspace
     };
 
     QString qmlPath;
