@@ -4,8 +4,7 @@ project('luna', 'cpp',
 
 # Dependencies
 qt6 = import('qt6')
-qt6_dep = dependency('qt6', modules: ['Core', 'Gui', 'Qml', 'Quick', 'Widgets', 'OpenGL'])
-lua_dep = dependency('lua', required : false) # Placeholder for Lua
+qt6_dep = dependency('qt6', modules: ['Core', 'Gui', 'Widgets', 'OpenGL', 'Svg', 'SvgWidgets'])
 gl_dep = dependency('gl', required: false)
 
 # Include directories
