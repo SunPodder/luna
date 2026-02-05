@@ -1,13 +1,23 @@
 # UI Module
 
 processed_files = qt6.preprocess(
-  moc_headers : 'MainWindow.hpp',
+  moc_headers : [
+    'MainWindow.hpp',
+    'widgets/TopBar.hpp',
+    'widgets/AiPanel.hpp',
+    'widgets/EditorPanel.hpp',
+    'widgets/TerminalPanel.hpp',
+    'widgets/SidePanel.hpp',
+    'widgets/ToolsPanel.hpp',
+    'widgets/StatusBar.hpp',
+  ],
   dependencies: qt6_dep
 )
 
-ui_sources = files(
-  'MainWindow.cpp'
-)
+
+# Import widget sources from widgets/meson.build
+subdir('widgets')
+ui_sources = files('MainWindow.cpp') + ui_widget_sources
 
 ui_lib = static_library('luna_ui',
   ui_sources, processed_files,
