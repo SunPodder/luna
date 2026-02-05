@@ -4,7 +4,7 @@ The IDE will be designed around AI native development, integrating advanced AI f
 
 TECH STACK
 - C++20/23
-- Qt6/QML
+- Qt6/Widgets
 - OpenGL/Vulkan
 - Meson build system
 - Clang/LLVM toolchain

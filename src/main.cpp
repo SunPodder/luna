@@ -1,5 +1,4 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include <QApplication>
 #include "core/Core.hpp"
 #include "ui/MainWindow.hpp"
 #include "editor/Editor.hpp"
@@ -8,7 +7,7 @@
 #include "plugin/PluginManager.hpp"
 
 int main(int argc, char *argv[]) {
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
     
     Luna::Core::Logger::log("Luna Editor Starting...");
 
