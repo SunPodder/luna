@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     Luna::Lsp::LspClient lspClient;
     Luna::Editor::Editor editor;
     Luna::AI::AiAssist aiAssist;
-    Luna::UI::MainWindow window;
+    Luna::UI::MainWindow window(pluginManager);
 
     window.show();
 

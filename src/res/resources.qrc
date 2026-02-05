@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>icons/files.svg</file>
+        <file>icons/search.svg</file>
+        <file>icons/git.svg</file>
+        <file>icons/plugins.svg</file>
+    </qresource>
+</RCC>

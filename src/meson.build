@@ -9,10 +9,17 @@ subdir('ui')
 # Main executable
 luna_sources = files('main.cpp')
 
+processed_res = qt6.compile_resources(
+  sources: 'res/resources.qrc',
+)
+
 executable('luna',
   luna_sources,
+  processed_res,
   dependencies : [
-    qt6_dep, 
+    qt6_dep,
+    lua_dep,
+    sol2_dep,
     core_dep, 
     plugin_dep,
     lsp_dep, 

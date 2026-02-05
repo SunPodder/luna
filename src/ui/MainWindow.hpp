@@ -11,17 +11,21 @@
 #include "widgets/SidePanel.hpp"
 #include "widgets/ToolsPanel.hpp"
 
+namespace Luna::Plugin { class PluginManager; }
+
 namespace Luna::UI {
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(Luna::Plugin::PluginManager& pluginManager, QWidget *parent = nullptr);
     void show();
 
 private:
     void setupUi();
     void setupLayout();
+
+    Luna::Plugin::PluginManager& m_pluginManager;
 
     // UI Components
     QWidget *m_centralWidget{nullptr};

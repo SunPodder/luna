@@ -6,7 +6,8 @@
 
 namespace Luna::UI {
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
+MainWindow::MainWindow(Luna::Plugin::PluginManager& pluginManager, QWidget *parent) 
+    : QMainWindow(parent), m_pluginManager(pluginManager) {
     Core::Logger::log("MainWindow initialized");
     setupUi();
 }
@@ -71,7 +72,7 @@ void MainWindow::setupLayout() {
     m_mainSplitter->addWidget(m_sidePanel);
 
     // Tools Panel
-    m_toolsPanel = new ToolsPanel(this);
+    m_toolsPanel = new ToolsPanel(m_pluginManager, this);
     m_mainSplitter->addWidget(m_toolsPanel);
 
     m_mainLayout->addWidget(m_mainSplitter);
