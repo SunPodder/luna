@@ -18,6 +18,7 @@ executable('luna',
   processed_res,
   dependencies : [
     qt6_dep,
+    termwidget_dep,
     lua_dep,
     sol2_dep,
     core_dep, 

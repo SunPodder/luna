@@ -21,7 +21,7 @@ ui_sources = files('MainWindow.cpp') + ui_widget_sources
 
 ui_lib = static_library('luna_ui',
   ui_sources, processed_files,
-  dependencies : [qt6_dep, core_dep, plugin_dep],
+  dependencies : [qt6_dep, core_dep, plugin_dep, termwidget_dep],
   include_directories : inc
 )
 

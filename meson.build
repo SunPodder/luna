@@ -5,7 +5,9 @@ project('luna', 'cpp',
 # Dependencies
 qt6 = import('qt6')
 qt6_dep = dependency('qt6', modules: ['Core', 'Gui', 'Widgets', 'OpenGL', 'Svg', 'SvgWidgets'])
+termwidget_dep = dependency('qtermwidget6', required: true)
 gl_dep = dependency('gl', required: false)
+
 lua_dep = dependency('lua', required: true)
 sol2_dep = dependency('sol2', required: true)
 
