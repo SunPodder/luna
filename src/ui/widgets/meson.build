@@ -6,6 +6,6 @@ ui_widget_sources = files(
   'EditorPanel.cpp',
   'TerminalPanel.cpp',
   'SidePanel.cpp',
-  'ToolsPanel.cpp',
+  'ToolBar.cpp',
   'StatusBar.cpp',
 )

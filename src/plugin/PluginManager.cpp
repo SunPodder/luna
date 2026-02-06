@@ -1,5 +1,6 @@
 #include "PluginManager.hpp"
 #include "../core/Core.hpp"
+#include "ui/widgets/ToolBar.hpp"
 #include <filesystem>
 
 namespace Luna::Plugin {
@@ -11,7 +12,7 @@ PluginManager::PluginManager() {
     lua.open_libraries(sol::lib::base, sol::lib::package, sol::lib::io, sol::lib::string);
 
     // Expose API
-    lua.set_function("register_tool", &PluginManager::registerTool, this);
+    lua.set_function("register_toolbar_item", &PluginManager::registerToolBarItem, this);
 }
 
 void PluginManager::loadPlugins() {
@@ -38,12 +39,12 @@ void PluginManager::loadPlugins() {
     }
 }
 
-void PluginManager::registerTool(const std::string& name, const std::string& iconPath) {
+void PluginManager::registerToolBarItem(const std::string& name, const std::string& iconPath) {
     tools.push_back({name, iconPath});
     Core::Logger::log("Tool registered: " + QString::fromStdString(name));
 }
 
-const std::vector<Luna::UI::Tool>& PluginManager::getTools() const {
+const std::vector<Luna::UI::ToolBar::Item>& PluginManager::getTools() const {
     return tools;
 }
 

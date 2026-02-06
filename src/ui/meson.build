@@ -8,7 +8,7 @@ processed_files = qt6.preprocess(
     'widgets/EditorPanel.hpp',
     'widgets/TerminalPanel.hpp',
     'widgets/SidePanel.hpp',
-    'widgets/ToolsPanel.hpp',
+    'widgets/ToolBar.hpp',
     'widgets/StatusBar.hpp',
   ],
   dependencies: qt6_dep

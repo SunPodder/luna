@@ -9,7 +9,7 @@
 #include "widgets/EditorPanel.hpp"
 #include "widgets/TerminalPanel.hpp"
 #include "widgets/SidePanel.hpp"
-#include "widgets/ToolsPanel.hpp"
+#include "widgets/ToolBar.hpp"
 
 namespace Luna::Plugin { class PluginManager; }
 
@@ -42,7 +42,7 @@ private:
     EditorPanel *m_editorPanel{nullptr};
     TerminalPanel *m_terminalPanel{nullptr};
     SidePanel *m_sidePanel{nullptr};
-    ToolsPanel *m_toolsPanel{nullptr};
+    ToolBar *m_toolBar{nullptr};
     
     QPoint m_dragPosition;
 

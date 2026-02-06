@@ -73,10 +73,10 @@ void MainWindow::setupLayout() {
     m_sidePanel->hide(); // Start collapsed
 
     // Tools Panel
-    m_toolsPanel = new ToolsPanel(m_pluginManager, this);
-    m_mainSplitter->addWidget(m_toolsPanel);
+    m_toolBar = new ToolBar(m_pluginManager, this);
+    m_mainSplitter->addWidget(m_toolBar);
 
-    connect(m_toolsPanel, &ToolsPanel::toolSelected, this, [this](const QString& toolName) {
+    connect(m_toolBar, &ToolBar::toolSelected, this, [this](const QString& toolName) {
         if (toolName.isEmpty()) {
             m_sidePanel->hide();
         } else {

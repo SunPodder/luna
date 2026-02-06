@@ -1,8 +1,8 @@
-#include "ToolsPanel.hpp"
+#include "ToolBar.hpp"
 #include "../../plugin/PluginManager.hpp"
 #include <QPushButton>
 
-const std::vector<Luna::UI::Tool> tools = {
+const std::vector<Luna::UI::ToolBar::Item> tools = {
     {"Files", ":/icons/files.svg"},
     {"Search", ":/icons/search.svg"},
     {"Git", ":/icons/git.svg"},
@@ -11,13 +11,13 @@ const std::vector<Luna::UI::Tool> tools = {
 
 namespace Luna::UI {
 
-ToolsPanel::ToolsPanel(Luna::Plugin::PluginManager& pluginManager, QWidget *parent)
+ToolBar::ToolBar(Luna::Plugin::PluginManager& pluginManager, QWidget *parent)
     : QWidget(parent), m_pluginManager(pluginManager) {
     setupUi();
     refreshTools();
 }
 
-void ToolsPanel::setupUi() {
+void ToolBar::setupUi() {
     setStyleSheet(
         "QWidget { background-color: #333333; }"
         "QPushButton { border: none; border-radius: 0px; background-color: transparent; text-align: center; }"
@@ -32,7 +32,7 @@ void ToolsPanel::setupUi() {
     m_layout->addStretch();
 }
 
-void ToolsPanel::refreshTools() {
+void ToolBar::refreshTools() {
     // Clear existing buttons if any (though currently only called once)
     // TODO: Clear m_buttons and layout if refresh needs to support re-calling
     
@@ -45,7 +45,7 @@ void ToolsPanel::refreshTools() {
     }
 }
 
-void ToolsPanel::addToolButton(const QString& name, const QString& iconPath) {
+void ToolBar::addToolButton(const QString& name, const QString& iconPath) {
     // Insert before the spacer (last item)
     int index = m_layout->count() - 1;
     
@@ -68,7 +68,7 @@ void ToolsPanel::addToolButton(const QString& name, const QString& iconPath) {
     m_buttons[name] = btn;
 }
 
-void ToolsPanel::handleToolClick(const QString& toolName) {
+void ToolBar::handleToolClick(const QString& toolName) {
     if (m_activeTool == toolName) {
         // Deselect
         if (m_buttons[m_activeTool]) {

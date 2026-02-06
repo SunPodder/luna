@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <sol/sol.hpp>
-#include "../ui/widgets/ToolsPanel.hpp"
+#include "../ui/widgets/ToolBar.hpp"
 
 namespace Luna::Plugin {
 
@@ -12,12 +12,12 @@ public:
     void loadPlugins();
     
     // Tools API
-    void registerTool(const std::string& name, const std::string& iconPath);
-    const std::vector<Luna::UI::Tool>& getTools() const;
+    void registerToolBarItem(const std::string& name, const std::string& iconPath);
+    const std::vector<Luna::UI::ToolBar::Item>& getTools() const;
 
 private:
     sol::state lua;
-    std::vector<Luna::UI::Tool> tools;
+    std::vector<Luna::UI::ToolBar::Item> tools;
 };
 
 }
